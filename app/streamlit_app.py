@@ -27,8 +27,20 @@ st.markdown("---")
 @st.cache_resource
 def load_model():
     """Charge le modèle et ses informations"""
-    model = joblib.load('../models/xgboost_churn_model.pkl')
-    model_info = joblib.load('../models/model_info.pkl')
+    import os
+    
+    # Déterminer le chemin de base
+    if os.path.exists('../models/xgboost_churn_model.pkl'):
+        # Développement local
+        model_path = '../models/xgboost_churn_model.pkl'
+        info_path = '../models/model_info.pkl'
+    else:
+        # Production (Streamlit Cloud)
+        model_path = 'models/xgboost_churn_model.pkl'
+        info_path = 'models/model_info.pkl'
+    
+    model = joblib.load(model_path)
+    model_info = joblib.load(info_path)
     return model, model_info
 
 # Charger le modèle
