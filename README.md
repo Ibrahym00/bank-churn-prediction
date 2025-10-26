@@ -9,7 +9,7 @@ Prédire la probabilité qu'un client quitte la banque en utilisant un modèle X
 
 ## 🚀 Demo Live
 
-**[Tester l'application en ligne](LIEN_STREAMLIT_A_VENIR)**
+**[Tester l'application en ligne](https://bank-churn-prediction-ibrahym00.streamlit.app/)**
 
 ## 📊 Fonctionnalités
 
